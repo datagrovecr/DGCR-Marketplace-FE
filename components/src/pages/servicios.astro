@@ -1,0 +1,47 @@
+---
+import BarraNavegacion from '../components/BarraNavegacion.astro';
+import Tiles from '../components/Tiles.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TodosLosServicios from '../components/Servicios/TodosLosServicios.astro';
+import Filtro from '../components/market/filtro.astro'
+import SliderCategorias from '../components/Servicios/SliderCategorias.astro';
+import Carrusell from '../components/Servicios/Carrusell.astro';
+const pageTitle = "Trabajos Que Ayudan";
+---
+<BaseLayout pageTitle={pageTitle}>
+    <BarraNavegacion />
+    <Carrusell />
+    
+    <div class="pgServicios">
+        <div class="servicios-filter">
+            <Filtro />
+        </div>
+        <TodosLosServicios />
+    </div>
+</BaseLayout>
+<style>
+    
+  .servicios-filter{
+    width: 20rem;
+    height: 50rem;
+    padding-right: 0.6em;
+    
+    font-size: 30px;
+    
+  }
+
+  .pgServicios{
+    display: flex;
+  }
+  
+  .cuadro-servicio{
+    padding-left: 1em;
+  }
+  
+
+@media all and (max-width: 720px) {
+    .servicios-filter {
+        display: none;
+    }
+}
+</style>

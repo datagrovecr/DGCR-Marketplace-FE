@@ -1,0 +1,151 @@
+---
+//name: ProductCarousel
+
+//const {products} =Astro.props;
+
+const products = [
+    { name: 'Jardineria' , description:'Cuida tus espacios verdes.',src:"https://cdn-icons-png.flaticon.com/512/1518/1518863.png", price:10, currency:"$", forward:"#" ,id:"1" },
+    { name: 'Construccion' , description:'Repara y construlle lo que necesites',src:"https://cdn-icons-png.flaticon.com/512/4327/4327376.png", price:10, currency:"$", forward:"#" ,id:"2" },
+    { name: 'Product 3' , description:'Alistate para tu ocuacion especial.',src:"https://cdn-icons-png.flaticon.com/512/2707/2707142.png", price:10, currency:"$", forward:"#" ,id:"3" },
+    {name: 'Jardineria' , description:'Cuida tus espacios verdes.',src:"https://cdn-icons-png.flaticon.com/512/1518/1518863.png", price:10, currency:"$", forward:"#" ,id:"1" },
+    { name: 'Construccion' , description:'Repara y construlle lo que necesites',src:"https://cdn-icons-png.flaticon.com/512/4327/4327376.png", price:10, currency:"$", forward:"#" ,id:"2" },
+    { name: 'Product 3' , description:'Alistate para tu ocuacion especial.',src:"https://cdn-icons-png.flaticon.com/512/2707/2707142.png", price:10, currency:"$", forward:"#" ,id:"3" },
+    { name: 'Jardineria' , description:'Cuida tus espacios verdes.',src:"https://cdn-icons-png.flaticon.com/512/1518/1518863.png", price:10, currency:"$", forward:"#" ,id:"1" },
+    { name: 'Construccion' , description:'Repara y construlle lo que necesites',src:"https://cdn-icons-png.flaticon.com/512/4327/4327376.png", price:10, currency:"$", forward:"#" ,id:"2" },
+    { name: 'Product 3' , description:'Alistate para tu ocuacion especial.',src:"https://cdn-icons-png.flaticon.com/512/2707/2707142.png", price:10, currency:"$", forward:"#" ,id:"3" },
+    // Add more products as needed
+  ];
+
+/* .product-carousel img  {
+  max-width: 100%;
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
+*/
+
+---
+
+
+<section>
+
+  <div class="product-carousel" item-display-d=3 item-display-t=2 item-display-m=1>
+    <button class="pre-btn" ><img src="https://cdn-icons-png.flaticon.com/512/45/45093.png" alt=""></button>
+    <button class="nxt-btn" ><img src="https://cdn-icons-png.flaticon.com/512/45/45093.png" alt=""></button>
+    <div class="product-container">
+      {products.map((item) =>
+        
+        <div class="carrusell-product">
+          <div class="product-image">              
+              <img src={item.src} class="product-thumb" alt="Benefit 1">        
+          </div>
+          <div class="product-info">
+              <p class="product-brand">{item.name}</p>
+          </div>
+        </div>
+        )}
+    </div>
+  </div>
+  
+</section>
+
+<script>
+  const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+})
+
+</script>
+
+<style>
+  .product-carousel {
+    position: relative;
+    margin-bottom: 4rem;
+  }
+
+  .product-container {
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  }
+
+  .carrusell-product {
+    display: flex;
+    flex: 0 0 auto;
+    margin-right: 50px;
+    flex-direction: column;
+    align-items: center;
+    width: 8rem;
+  }
+
+  .product-container::-webkit-scrollbar {
+  display: none;
+  }
+
+  .product-image  {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  width: 5rem;
+  height: 5rem;
+  }
+
+  .product-info{
+    text-align: center;
+  }
+
+  .product-thumb {
+    max-width: 100%;
+    width: 10rem;
+    object-fit: cover;
+  }
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.pre-btn img{
+  left: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.nxt-btn {
+  right: 0;
+}
+
+.nxt-btn img{
+  width: 30px;
+  height: 30px;
+}
+
+</style>
+

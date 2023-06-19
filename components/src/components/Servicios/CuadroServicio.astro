@@ -1,0 +1,137 @@
+---
+import EstrellasCalificacion from "./EstrellasCalificacion.astro";
+const products = [
+  {
+    name: "jardineria fernando",
+    description: "Enjoy free shipping on all orders.",
+    src: "https://cdn.vox-cdn.com/thumbor/Stn4BvUwDgFAlTJ8zSfLvsBggak=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9199167/white.jpg",
+    price: 10,
+    direccion: "asbdaskdjasndkasssd",
+    currency: "$",
+    forward: "jardineriaFernando",
+    id: "1",
+  },
+  {
+    name: "Product 1",
+    description: "Enjoy free shipping on all orders.",
+    src: "https://cdn.vox-cdn.com/thumbor/Stn4BvUwDgFAlTJ8zSfLvsBggak=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9199167/white.jpg",
+    price: 10,
+    currency: "$",
+    forward: "jardineriaFernando",
+    id: "1",
+  },
+  {
+    name: "Product 1",
+    description: "Enjoy free shipping on all orders.",
+    src: "https://cdn.vox-cdn.com/thumbor/Stn4BvUwDgFAlTJ8zSfLvsBggak=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9199167/white.jpg",
+    price: 10,
+    currency: "$",
+    forward: "jardineriaFernando",
+    id: "1",
+  },
+  {
+    name: "Product 1",
+    description: "Enjoy free shipping on all orders.",
+    src: "https://cdn.vox-cdn.com/thumbor/Stn4BvUwDgFAlTJ8zSfLvsBggak=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9199167/white.jpg",
+    price: 10,
+    currency: "$",
+    forward: "jardineriaFernando",
+    id: "1",
+  },
+
+  // Add more products as needed
+];
+---
+
+<div class="flex-container-servicio">
+  {
+    products.map((item) => (
+      <div class="servicio-elemento">
+        <a href={item.forward} class="links4servicios">
+          <img
+            src="https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg"
+            alt="Benefit 2"
+            class="imagen-cuadro-servicio"
+          />
+          <div class="servicio-descripcion">
+            <div class="title">
+              <div class="text">{item.name}</div>
+              <div class="stars">
+              <EstrellasCalificacion  calificacion={"4.7"} />
+             </div>
+            </div>
+            
+            <div  class="price">
+              {item.currency}{item.price} <span>{item.description}</span>
+            </div>
+            
+          </div>
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .links4servicios {
+    text-decoration: none;
+  }
+  .flex-container-servicio {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .flex-container-servicio > div {
+    width: 200px;
+    margin: 10px;
+    line-height: 30px;
+    
+    border-radius: 12px;
+  }
+
+  .imagen-cuadro-servicio {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  
+  .servicio-descripcion {
+    font-size: 18px;
+    font-family: inter;
+  }
+  .servicio-descripcion .title{
+    display: flex;
+    justify-content: space-between
+  }
+
+  .servicio-descripcion .title .text{
+    font-weight: 600;
+  }
+
+  .servicio-descripcion .price{
+    font-size: 20px ;
+  }
+  .servicio-descripcion .price span{
+    color: rgb(116, 116, 116);
+  }
+
+  @media all and (max-width: 720px) {
+    
+    .flex-container-servicio > div {
+     width:unset;
+   
+    }
+
+    .servicio-descripcion {
+    font-size: 18px;
+    }
+  }
+
+  @media all and (min-width: 720px) {
+    
+    .servicio-descripcion .price{
+    font-size: 14px ;
+    }
+    
+  }
+</style>

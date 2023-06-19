@@ -1,0 +1,108 @@
+---
+---
+
+<div class="calendar">
+    <div class="day">
+      <div class="date">-</div>
+      <div class="event">
+            <p>6:00</p>
+            <p>8:00</p>
+            <p>10:00</p>
+            <p>12:00</p>
+            <p>14:00</p>
+            <p>18:00</p>
+      </div>
+    </div>
+    <div class="day">
+      <div class="date">-</div>
+      <div class="event">
+        <p>8:00</p>
+        <p>18:00</p>
+  </div>
+    </div>
+    <div class="day">
+      <div class="date">-</div>
+      <div class="event">
+        <p>6:00</p>
+        <p>8:00</p>
+        <p>10:00</p>
+        <p>18:00</p>
+  </div>
+    </div>
+    <div class="day">
+      <div class="date">-</div>
+      <!-- Recuadro de agenda para el siguiente día -->
+    </div>
+    <div class="day">
+      <div class="date">-</div>
+      <div class="event">
+        <p>14:00</p>
+        <p>18:00</p>
+  </div>
+    </div>
+    <div class="day">
+      <div class="date">-</div>
+      <!-- Recuadro de agenda para el siguiente día -->
+    </div>
+    <div class="day">
+      <div class="date">-</div>
+      <!-- Recuadro de agenda para el siguiente día -->
+    </div>
+  </div>
+  
+  
+  
+<style>
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.date {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.event {
+  background-color: #f1f1f1;
+  padding: 5px;
+}
+
+.event p {
+  margin: 5px 0;
+  font-size: 14px;
+  padding: 2px;
+}
+
+</style>
+
+<script>
+// Obtener la fecha actual
+var currentDate = new Date();
+
+var firstDayDate = document.querySelector('.day .date');
+
+if (firstDayDate instanceof Element) {
+  firstDayDate.textContent = currentDate.getDate().toString();
+}
+
+for (var i = 1; i < 7; i++) {
+  var nextDate = new Date(currentDate);
+  nextDate.setDate(currentDate.getDate() + i);
+
+  var nextDayDate = document.querySelectorAll('.day .date')[i];
+
+  if (nextDayDate instanceof Element) {
+    nextDayDate.textContent = nextDate.getDate().toString();
+  }
+}
+</script>

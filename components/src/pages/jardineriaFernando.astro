@@ -1,0 +1,128 @@
+---
+import BarraNavegacion from '../components/BarraNavegacion.astro';
+import ServicioLayout from '../layouts/ServicioLayout.astro';
+import TodosLosServicios from '../components/Servicios/TodosLosServicios.astro';
+import EstrellasCalificacion from '../components/Servicios/EstrellasCalificacion.astro';
+import CalendarioAgenda from '../components/Servicios/CalendarioAgenda.astro';
+import Comentarios from '../components/Servicios/Comentarios.astro';
+const pageTitle = "Trabajos Que Ayudan";
+const calificacion = "4.7"
+---
+<ServicioLayout pageTitle={pageTitle}>
+<body>
+    <div class="container">
+        <div class="info">
+            <h1>Jardineria Fernando</h1>
+            <div class="calif-ubi">
+                <EstrellasCalificacion calificacion={calificacion} />
+                <p class="ubi">Moravia</p>
+            </div>
+            <p id="descripcion">Somos una empresa líder en el sector de jardinería, dedicada a crear espacios verdes excepcionales. Nuestro enfoque se centra en el diseño innovador, la calidad en la ejecución y el compromiso con la satisfacción del cliente. Con un equipo de profesionales apasionados y creativos, transformamos cualquier área exterior en un oasis de belleza natural y tranquilidad. Ya sea que necesites un jardín residencial, un paisaje corporativo o un proyecto público, estamos comprometidos en superar tus expectativas y hacer de tu visión una realidad impresionante.</p>
+            <button class="hire-button">Ver disponibilidad</button>
+        </div>
+        <div class="profile">
+            <img src="https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg" alt="Benefit 2" class="imagen-cuadro-servicio">
+            <button class="hire-button">Contactar</button>
+        </div>
+    </div>
+    <Comentarios />
+</body>
+
+<style>
+.container {
+    max-width: 100%;
+    margin-top: 50px;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+}
+
+.calif-ubi{
+    display: flex;
+    align-items: center;
+    
+}
+
+.ubi{
+    padding-left: 2rem;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile h1 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.profile p {
+    font-size: 16px;
+    color: #666;
+}
+
+#descripcion{
+    margin-top: 2rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.hire-button {
+    margin-top: 1rem;
+  background-color: black;
+  color: #FFF;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hire-button:hover {
+  background-color: #5B5B5B;
+}
+
+@media all and (max-width: 720px) {
+    .container{
+        max-width: 100%;
+    margin-top: 50px;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    }
+
+    .info{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .info h1{
+        text-align: center;
+    }
+
+}
+
+    
+
+</style>
+</ServicioLayout>

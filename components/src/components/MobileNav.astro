@@ -1,0 +1,265 @@
+---
+const pageTitle: string = "TQA";
+---
+
+<div id="headerContainer">
+    <div>
+        <a id="logo">{pageTitle}</a>
+    </div>
+
+    <div>
+        <button
+            onclick="document.getElementById('id01').style.display = 'block'"
+            id="btn-icon"
+            >&#9776;
+        </button>
+
+        <div id="id01" style="display: none;" class="modal">
+            <form class="modal-content animate" method="post">
+                <div class="Navcontainer">
+                    <nav>
+                        <ul id="mobileMenu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="servicios">Servicios</a></li>
+                            <li><a href="#">Ser Proveedor</a></li>
+                            <li><a href="#">Carrito</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <a id="btn-login"> <p>Sign In</p></a>
+                <div class="containerLogin">
+                    <label for="uname"><b>Username</b></label>
+                    <input
+                        type="text"
+                        placeholder="Enter Username"
+                        name="uname"
+                    />
+
+                    <label for="psw"><b>Password</b></label>
+                    <input
+                        type="password"
+                        placeholder="Enter Password"
+                        name="psw"
+                    />
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked="checked"
+                            name="remember"
+                        /> Remember me
+                    </label>
+                </div>
+
+                <div class="container" id="closeContainer">
+                    <button
+                        type="button"
+                        onclick="document.getElementById('id01').style.display = 'none'"
+                        class="cancelbtn">Close</button
+                    >
+                    <span class="psw" id="pswForget"
+                        >Forgot <a href="#">Password?</a></span
+                    >
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+        #headerContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+    #logo {
+        color: #130909;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    #btn-icon {
+        border-radius: 10%;
+        width: auto;
+    }
+    /* Full-width input fields */
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #000000;
+        color: white;
+        padding: 7px 10px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    /* Styles for the navigation inside the modal */
+    .Navcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        display: block;
+        max-height: fit-content;
+    }
+    nav {
+        font-family: "inter";
+        font-weight: 700;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 3em;
+        font-size: 1.5em;
+        height: 10em;
+    }
+    nav ul li {
+        margin-left: 1rem;
+        display: block;
+        padding-top: 2em;
+    }
+    nav ul li a {
+        color: #000000;
+        text-decoration: none;
+    }
+    #btn-login {
+        display: block;
+        text-align: center;
+        color: #f1f1f1;
+        font-weight: 700;
+        padding: 0.3em;
+        background-color: #000000;
+        width: auto;
+    }
+    #btn-login p {
+        font-size: 1.5em;
+        font-family: "inter";
+        font-weight: 700;
+    }
+    #btn-login:hover {
+        background-color: #000000;
+    }
+    .containerLogin {
+        top: 50%;
+        height: 0;
+        overflow: hidden;
+        margin: 10px;
+        background-color: #ffffff;
+    }
+    .containerLogin.active {
+        height: auto;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+        font-size: 1.25em;
+    }
+    /* close btn & forget password*/
+    #closeContainer {
+        background-color: #ffffff;
+        border-radius: 5%;
+    }
+    #closeContainer,
+    button {
+        margin: 1em;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #000000;
+    }
+
+    .cancelbtn:hover {
+        cursor: pointer;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 2px solid #888;
+        width: 95%; /* Could be more or less, depending on screen size */
+        height: auto;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s;
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {
+            -webkit-transform: scale(0);
+        }
+        to {
+            -webkit-transform: scale(1);
+        }
+    }
+
+    @keyframes animatezoom {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    var modal = document.getElementById("id01");
+    const btnLogin = document.getElementById("btn-login");
+    const containerLogin = document.getElementsByClassName("containerLogin");
+
+    //User clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    btnLogin?.addEventListener("click", function () {
+        containerLogin[0].classList.toggle("active");
+    });
+</script>

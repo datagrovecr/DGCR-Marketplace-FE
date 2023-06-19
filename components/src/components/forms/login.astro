@@ -1,0 +1,105 @@
+---
+
+---
+
+
+<div class="container">
+    <h2>Formulario de Usuarios</h2>
+    <form action="#" method="POST" id="user-form">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{8}" required>
+        <small>Formato: 12345678</small>
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+      <div class="form-group">
+        <label for="provincia">Provincia:</label>
+        <select id="provincia" name="provincia" required>
+          <option value="" disabled selected>Seleccionar provincia</option>
+          <option value="san_jose">San José</option>
+          <option value="alajuela">Alajuela</option>
+          <option value="cartago">Cartago</option>
+          <option value="heredia">Heredia</option>
+          <option value="guanacaste">Guanacaste</option>
+          <option value="puntarenas">Puntarenas</option>
+          <option value="limon">Limón</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="distrito">Distrito:</label>
+        <input type="text" id="distrito" name="distrito" required>
+      </div>
+      <div class="form-group">
+        <label for="canton">Cantón:</label>
+        <input type="text" id="canton" name="canton" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Enviar">
+      </div>
+    </form>
+  </div>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #000000;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #000000;
+    }
+
+    .form-group .error {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>

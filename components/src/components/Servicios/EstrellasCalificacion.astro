@@ -1,0 +1,30 @@
+---
+const {calificacion} = Astro.props
+---
+<div class="rating">
+    <label for="star1"></label>
+    <p>{calificacion}</p>
+</div>
+
+<style>
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  color: #191919;
+  font-size: 20px;
+  padding: 0;
+}
+
+.rating label:before {
+  content: '\2605';
+}
+
+</style>
