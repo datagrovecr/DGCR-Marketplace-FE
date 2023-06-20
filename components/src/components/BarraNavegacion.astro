@@ -5,43 +5,9 @@ import Filtro from "./market/filtro.astro";
 <div class="search-form">
   <div class="form">
     <input type="text" name="query" placeholder="Buscar..." />
-    <button type="submit">Buscar</button>
-    <button
-      class="search-form-filter"
-      onclick="document.getElementById('id02').style.display = 'block'"
-      style="width:auto;">filtro</button
-    >
   </div>
 </div>
 
-<div id="id02" class="modal">
-  <div class="modal-content animate">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
-
-    
-    <div class="container">
-      <div class="servicios-filter">
-        <Filtro />
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  // Get the modal
-  var modal = document.getElementById("id02");
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-</script>
 
 <style>
   
@@ -56,24 +22,15 @@ import Filtro from "./market/filtro.astro";
   }
 
   .search-form input[type="text"] {
-    padding: 5px;
-    border: 1px solid #333;
-    border-radius: 3px 0 0 3px;
+    padding-left: 1rem;
+    border: 1.5px solid #bebebe;
+    border-radius: 1rem;
     margin: 0;
     min-width: 200px;
-    max-width: 500px;
+    max-width: 800px;
     width: 80%;
-    height: 25px;
-  }
-
-  .search-form button {
-    padding: 5px 10px;
-    height: 37px;
-    background-color: black;
-    color: #ffffff;
-    border: none;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
+    height: 4rem;
+    font-size: large;
   }
 
   .search-form-filter {
