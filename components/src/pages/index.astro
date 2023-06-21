@@ -1,4 +1,5 @@
 ---
+import SearchBar from '../components/SearchBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Trabajos Que Ayudan";
 ---
@@ -8,11 +9,7 @@ const pageTitle = "Trabajos Que Ayudan";
     <div class="text"> 
       <h1>Trabajos Que Ayudan</h1>
       <p>Viva siempre el trabajo y la paz</p>
-      <div class="input-box">
-        <i class="uil uil-search"></i>
-        <input type="text" placeholder="Search here..." />
-        <a class="button" id="maGlass" style="rotate: -45deg;">&#9906;
-        </a>
+      <SearchBar />
       
     </div>
     
