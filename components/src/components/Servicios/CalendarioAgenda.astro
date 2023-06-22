@@ -9,14 +9,22 @@ const products = [
   ];
 ---
 
-<h2>Disponibilidad:</h2>
+<h2 class="disponibilidad">Disponibilidad:</h2>
 
   {products.map((item) =>
-    <div class="Calendar">               
+    <div class="calendar">               
       <p>{item.day}: {item.time}</p>
     </div>
   )}
   
 <style>
-  
+.disponibilidad{
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.calendar{
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
 </style>
