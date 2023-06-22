@@ -1,0 +1,177 @@
+---
+import EstrellasCalificacion from '../../components/Servicios/EstrellasCalificacion.astro';
+import CalendarioAgenda from '../../components/Servicios/CalendarioAgenda.astro';
+import Comentarios from '../../components/Servicios/Comentarios.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Trabajos Que Ayudan";
+const calificacion = "4.7"
+---
+<BaseLayout pageTitle={pageTitle}>
+<body>
+    <div class="container">
+        <div class="info">
+            <div class="profile">
+                <h1>Jardineria Fernando</h1>
+                <img src="https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg" alt="Benefit 2">
+                <EstrellasCalificacion {calificacion}/>
+                <button class="hire-button">Editar perfil</button>
+                <h2>Bienvenido!</h2>
+            </div>
+        </div>
+        <div class="container-anuncios">
+            <div class="titulo-anuncios-crear-boton">
+                <h2>Anuncios publicados:</h2>
+                <button class="crear-anuncio-button">Crear anuncio</button>
+            </div>
+            <div class="anuncio">
+                <img src="https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg" alt="Benefit 2" class="imagen-cuadro-servicio">
+                <button class="hire-button">Desabilitar anuncio</button>
+            </div>
+        </div>
+    </div>
+</body>
+</BaseLayout>
+
+<style>
+.container {
+    max-width: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.info{
+    max-width: 100%;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+}
+
+.container-anuncios{
+    max-width: 100%;
+    width: 90%;
+    margin-left: 2rem;
+}
+
+.titulo-anuncios-crear-boton{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anuncio{
+    margin-top: 1rem;
+    max-width: 100%;
+    padding: 1rem;
+    border-top: 1px solid #bbbbbb;
+    border-bottom: 1px solid #bbbbbb;
+}
+.calif-ubi{
+    display: flex;
+    align-items: center;
+    
+}
+
+.ubi{
+    padding-left: 2rem;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.anuncio img {
+    width: 300px;
+    height: 200px;
+    border-radius: 15%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.container h2 {
+    font-size: 24px;
+}
+
+.profile p {
+    font-size: 16px;
+    color: #666;
+}
+
+#descripcion{
+    margin-top: 2rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.hire-button {
+    margin-top: 1rem;
+  background-color: black;
+  color: #FFF;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hire-button:hover {
+  background-color: #5B5B5B;
+}
+
+.crear-anuncio-button{
+  background-color: rgb(26, 107, 26);
+  color: #FFF;
+  border: none;
+  padding: 12px 22px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+@media all and (max-width: 720px) {
+    .container{
+        max-width: 100%;
+    margin-top: 0rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    }
+
+    .info{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .info h1{
+        text-align: center;
+    }
+    .profile{
+        margin:0;
+    }
+}
+</style>
