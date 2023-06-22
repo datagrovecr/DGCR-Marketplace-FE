@@ -1,10 +1,14 @@
 ---
-
+import LocationSmall from "./location/locationSmall.astro";
 import MobileNav from "./MobileNav.astro";
+const pageTitle: string = "LABOROSO";
 ---
 <div id="container">
     <div class="navLines" id="navLines">
-        
+        <div>
+            <a id="logo">{pageTitle}</a>
+        </div>
+        <LocationSmall></LocationSmall>
         <div class="nav-icon menu-icon" id="menu-toggle">
             <!-- <a href="#" id="navIcon" class="nav-icon-000">&#9776;</a>
             <a href="#" id="navIcon" class="nav-icon-000 hidden">&#9932;</a> -->
@@ -15,5 +19,11 @@ import MobileNav from "./MobileNav.astro";
 </div>
 
 <style>
-    
+    #logo {
+        color: #130909;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
 </style>

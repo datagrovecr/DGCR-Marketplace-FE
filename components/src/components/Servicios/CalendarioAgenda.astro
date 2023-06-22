@@ -1,108 +1,30 @@
 ---
+const products = [
+    { day: 'Lunes' , time:'8:00 am - 10 pm'},
+    { day: 'Martes' , time:'8:00 am - 10 pm'},
+    { day: 'Miercoles' , time:'8:00 am - 10 pm'},
+    { day: 'Jueves' , time:'8:00 am - 10 pm'},
+    { day: 'Viernes' , time:'8:00 am - 10 pm'},
+    { day: 'Sabado' , time:'8:00 am - 10 pm'},
+  ];
 ---
 
-<div class="calendar">
-    <div class="day">
-      <div class="date">-</div>
-      <div class="event">
-            <p>6:00</p>
-            <p>8:00</p>
-            <p>10:00</p>
-            <p>12:00</p>
-            <p>14:00</p>
-            <p>18:00</p>
-      </div>
+<h2 class="disponibilidad">Disponibilidad:</h2>
+
+  {products.map((item) =>
+    <div class="calendar">               
+      <p>{item.day}: {item.time}</p>
     </div>
-    <div class="day">
-      <div class="date">-</div>
-      <div class="event">
-        <p>8:00</p>
-        <p>18:00</p>
-  </div>
-    </div>
-    <div class="day">
-      <div class="date">-</div>
-      <div class="event">
-        <p>6:00</p>
-        <p>8:00</p>
-        <p>10:00</p>
-        <p>18:00</p>
-  </div>
-    </div>
-    <div class="day">
-      <div class="date">-</div>
-      <!-- Recuadro de agenda para el siguiente día -->
-    </div>
-    <div class="day">
-      <div class="date">-</div>
-      <div class="event">
-        <p>14:00</p>
-        <p>18:00</p>
-  </div>
-    </div>
-    <div class="day">
-      <div class="date">-</div>
-      <!-- Recuadro de agenda para el siguiente día -->
-    </div>
-    <div class="day">
-      <div class="date">-</div>
-      <!-- Recuadro de agenda para el siguiente día -->
-    </div>
-  </div>
-  
-  
+  )}
   
 <style>
-.calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+.disponibilidad{
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
-.day {
-  border: 1px solid #ccc;
-  padding: 10px;
+.calendar{
+  margin-top: 0.5rem;
+  margin-left: 2rem;
 }
-
-.date {
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.event {
-  background-color: #f1f1f1;
-  padding: 5px;
-}
-
-.event p {
-  margin: 5px 0;
-  font-size: 14px;
-  padding: 2px;
-}
-
 </style>
-
-<script>
-// Obtener la fecha actual
-var currentDate = new Date();
-
-var firstDayDate = document.querySelector('.day .date');
-
-if (firstDayDate instanceof Element) {
-  firstDayDate.textContent = currentDate.getDate().toString();
-}
-
-for (var i = 1; i < 7; i++) {
-  var nextDate = new Date(currentDate);
-  nextDate.setDate(currentDate.getDate() + i);
-
-  var nextDayDate = document.querySelectorAll('.day .date')[i];
-
-  if (nextDayDate instanceof Element) {
-    nextDayDate.textContent = nextDate.getDate().toString();
-  }
-}
-</script>
