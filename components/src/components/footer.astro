@@ -1,11 +1,11 @@
 ---
 ---
 
-<footer class="footer">
+<footer class="footerContainer">
     <div class="footer__addr">
       <h1 class="footer__logo">Something</h1>
           
-      <h2>Contact</h2>
+      <h2 id="contact">Contact</h2>
       
       <address>
         5534 Somewhere In. The World 22193-10212<br>
@@ -68,7 +68,7 @@
         
         <ul class="nav__ul">
           <li>
-            <a href="#">Privacy Policy</a>
+            <a href="#" class="navList">Privacy Policy</a>
           </li>
           
           <li>
@@ -88,26 +88,34 @@
   </footer>
 
 <style>
-
-
-
-body {
-  font-family: 'inter', system-ui, sans-serif;
-  
-  /* display: grid; */
-  
-  
-  background-color: #f4f4f4;
- 
+  .navList {
+    text-decoration: none;
+  }
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
-.footer {
+
+/* body {
+   font-family: acumin-pro, system-ui, sans-serif; 
+  margin: 0;
+   display: grid; 
+   grid-template-rows: auto 1fr auto; 
+  font-size: 14px;
+  background-color: #f4f4f4; 
+   align-items: start; 
+  min-height: 100vh;
+} */
+
+.footerContainer {
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
   color: #2f2f2f;
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
+  background-color: #f4f4f4;
+  align-items: start;
 }
 
 .footer > * {
@@ -126,7 +134,7 @@ body {
   font-size: 1.5rem;
 }
 
-.footer__addr h2 {
+.footer__addr #contact {
   margin-top: 1.3em;
   font-size: 15px;
   font-weight: 400;
@@ -160,16 +168,16 @@ body {
     background-color: #a09f9f;
 }
 
-.footer ul {
+.footerContainer ul {
   list-style: none;
   padding-left: 0;
 }
 
-.footer li {
+.footerContainer li {
   line-height: 2em;
 }
 
-.footer a {
+.footerContainer a {
   text-decoration: none;
 }
 
