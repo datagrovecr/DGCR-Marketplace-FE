@@ -49,11 +49,11 @@ const anuncios = [
                 <div class="anuncio">
                     <div class="img-btn-anuncio-indiv">
                         <img src={item.src} class="imagen-cuadro-servicio">
-                        <button class="desabilitar-button">Desabilitar anuncio</button> 
                     </div>  
                     <div class="info-anuncios">
                         <h2>{item.name}</h2>
                         <p>{item.description}</p>
+                        <button class="desabilitar-button">Desabilitar anuncio</button> 
                     </div>                            
                 </div> 
                 )}
@@ -71,10 +71,12 @@ const anuncios = [
 
     .info{
         max-width: 100%;
+        min-width: 25%;
         padding: 3rem;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         display: flex;
+        justify-content: center;
     }
 
     .container-anuncios{
@@ -94,13 +96,15 @@ const anuncios = [
         max-width: 100%;
         padding: 1rem;
         border-top: 1px solid #bbbbbb;
-        border-bottom: 1px solid #bbbbbb;
         display: flex;
         align-items: flex-start;
     }
 
     .info-anuncios{
         margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .img-btn-anuncio-indiv{
@@ -214,13 +218,14 @@ const anuncios = [
     @media all and (max-width: 720px) {
         .container{
             max-width: 100%;
-        margin-top: 0rem;
-        padding: 2rem;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
+            margin-top: 0rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-anuncios{
+            margin: 0;
+            align-self: center;
         }
 
         .info{
@@ -234,6 +239,33 @@ const anuncios = [
         }
         .profile{
             margin:0;
+            display: flex;
+            align-items: center;
         }
+
+        .anuncio img{
+            width: 100%;
+        }
+
+        .anuncio{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .titulo-anuncios-crear-boton{
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
+
+        .crear-anuncio-button{
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+
     }
 </style>
