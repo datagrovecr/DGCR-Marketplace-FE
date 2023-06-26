@@ -3,8 +3,12 @@ header{
   
 }
 
+.logo-image{
+  height: 1.5rem;
+}
+
 h1 {
-  font-family: "Playfair Display";
+  font-family: "playfair Display";
   font-size: 1.5rem;
   font-style: normal;
   font-variant: normal;
@@ -19,6 +23,10 @@ h3 {
     font-variant: normal;
     font-weight: 700;
     line-height: 1.1;
+}
+
+button{
+  font-family: inter;
 }
   
 p {
@@ -46,7 +54,7 @@ p {
   body {
     margin: 0;
     background: #ffffff;
-    font-family: 'Playfair Display';
+    font-family: 'inter';
     padding: 20px;
   }
   

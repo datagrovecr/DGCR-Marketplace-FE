@@ -1,9 +1,14 @@
 ---
 import EstrellasCalificacion from '../../components/Servicios/EstrellasCalificacion.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CalendarioAgenda from '../../components/Servicios/CalendarioAgenda.astro';
 const pageTitle = "Trabajos Que Ayudan";
 const calificacion = "4.7"
 const nameTitle = "Fernando Herrera"
+const ubicacion = "Moravia"
+const telefono = "8866-9283"
+const correo = "jardineria.fernando@gmail.com"
+const tiempoLaboroso = "5 meses"
 const porfileImage = "https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg"
 
 
@@ -26,13 +31,11 @@ const anuncios = [
                     <h1>{nameTitle}</h1>
                     <img src={porfileImage}>
                     <EstrellasCalificacion {calificacion}/>
-                    <p>Moravia</p>
-                    <p>Info</p>
-                    <p>Info</p>
-                    <p>Info</p>
-                    <p>Info</p>
-                    <p>Info</p>
-                    <p>Info</p>
+                    <p>Ubicacion: {ubicacion}</p>
+                    <p>Numero de telefono: {telefono}</p>
+                    <p>Correo: {correo}</p>
+                    <p>En la app desde: {tiempoLaboroso}</p>
+                    <CalendarioAgenda />
                     <button class="hire-button">Editar perfil</button>
                     
                 </div>
@@ -44,9 +47,9 @@ const anuncios = [
                 </div>
                 {anuncios.map((item) =>
                 <div class="anuncio">
-                    <div>
+                    <div class="img-btn-anuncio-indiv">
                         <img src={item.src} class="imagen-cuadro-servicio">
-                        <button class="hire-button">Desabilitar anuncio</button> 
+                        <button class="desabilitar-button">Desabilitar anuncio</button> 
                     </div>  
                     <div class="info-anuncios">
                         <h2>{item.name}</h2>
@@ -62,7 +65,7 @@ const anuncios = [
 <style>
     .container {
         max-width: 100%;
-        margin-top: 50px;
+        margin-top: 30px;
         display: flex;
     }
 
@@ -99,10 +102,14 @@ const anuncios = [
     .info-anuncios{
         margin-left: 1rem;
     }
+
+    .img-btn-anuncio-indiv{
+        display: flex;
+        flex-direction: column;
+    }
     .calif-ubi{
         display: flex;
         align-items: center;
-        
     }
 
     .ubi{
@@ -115,6 +122,7 @@ const anuncios = [
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: black;
     }
 
     .profile img {
@@ -143,8 +151,7 @@ const anuncios = [
     }
 
     .profile p {
-        font-size: 16px;
-        color: #666;
+        margin-top: 1rem;
     }
 
     #descripcion{
@@ -172,7 +179,7 @@ const anuncios = [
     }
 
     .crear-anuncio-button{
-    background-color: rgb(26, 107, 26);
+    background-color: rgb(11, 124, 11);
     color: #FFF;
     border: none;
     padding: 12px 22px;
@@ -181,6 +188,28 @@ const anuncios = [
     border-radius: 4px;
     transition: background-color 0.3s ease;
     }
+
+    .crear-anuncio-button:hover {
+    background-color: #23c02d;
+    }
+
+    .desabilitar-button {
+    margin-top: 1rem;
+    background-color: rgb(131, 131, 131);
+    color: #FFF;
+    border: none;
+    padding: 12px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    }
+
+    .desabilitar-button:hover {
+    background-color: #bababa;
+    color: rgb(255, 255, 255);
+    }
+
 
     @media all and (max-width: 720px) {
         .container{
