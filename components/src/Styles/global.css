@@ -4,7 +4,7 @@ header{
 }
 
 .logo-image{
-  height: 6rem;
+  height: 5rem;
 }
 
 h1 {
@@ -147,7 +147,7 @@ p {
   
    @media all and (max-width: 720px) {
     .logo-image{
-      height: 5rem;
+      height: 3rem;
     }
 
     .hero  .text h1{

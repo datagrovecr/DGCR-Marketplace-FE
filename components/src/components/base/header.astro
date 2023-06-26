@@ -1,9 +1,25 @@
 ---
 const pageTitle:string = "LABOROSO"
 import NavLines from "./NavLines.astro";
+import ModalNav from "./ModalNav.astro";
 ---
 <header id="container">
     <!-- <a id="logo">{pageTitle}</a>               -->
-    <NavLines />
+   
+
+    <div id="container">
+        <div class="navLines" id="navLines">
+            <div>
+                <a id="logo" href="/"><img class="logo-image" src="../blackLogo.png"></img></a>
+            </div>
+            <div class="nav-icon menu-icon" id="menu-toggle">
+                <!-- <a href="#" id="navIcon" class="nav-icon-000">&#9776;</a>
+                <a href="#" id="navIcon" class="nav-icon-000 hidden">&#9932;</a> -->
+            </div>
+            
+            <ModalNav />
+        </div>
+    </div>
+    
     
 </header>
