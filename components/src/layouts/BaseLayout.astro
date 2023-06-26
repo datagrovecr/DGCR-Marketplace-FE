@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
-const {pageTitle} = Astro.props
+const {pageTitle, footer = true, header = true} = Astro.props
 ---
 <html lang="en">
   <head>
@@ -17,8 +17,12 @@ const {pageTitle} = Astro.props
     <link rel="shortcut icon" href="whiteLogo.png">
   </head>
   <body>
-    <Header />
+    {header === true && <Header />}
 	<slot />
-	<Footer />
+  {footer === true && <Footer />}
   </body>
 </html>
+
+<script>
+
+</script>
