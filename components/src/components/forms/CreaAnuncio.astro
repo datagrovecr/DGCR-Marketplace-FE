@@ -5,35 +5,16 @@ const {categories} = Astro.props
 
 
 <div class="container-anuncioform">
-    <h2>Formulario de Usuarios</h2>
+    <h2>Crea tu Anuncio</h2>
     <form  method="POST" id="user-form">
       <div class="form-group">
         <label for="nombre">Nombre del anuncio:</label>
         <input type="text" id="nombre" name="nombre" required />
       </div>
       <div class="form-group">
-        <label for="apellido">:</label>
-        <input type="text" id="apellido" name="apellido" required />
+        <label for="descripcion">Descripcion:</label>
+        <textarea id="descripcion" name="descripcion" rows="5" required>Ingrese una descripcion para su anuncio</textarea>
       </div>
-      <div class="form-group">
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{8}" required />
-        <small>Formato: 12345678</small>
-      </div>
-      <div class="form-group">
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required />
-      </div>
-  
-      <div class="form-group">
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required />
-      </div>
-      <div class="form-group">
-        <label for="confirmar-contrasena">Confirmar contraseña:</label>
-        <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" />
-      </div>
-      
       <div class="form-group">
         <label for="provincia">Provincia:</label>
         <select id="provincia" name="provincia" required>
@@ -76,12 +57,13 @@ const {categories} = Astro.props
   
   
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* body {
+      font-family: "inter";
       background-color: #f4f4f4;
-    }
+    } */
   
     .container-anuncioform {
+        font-family: "inter";
       max-width: 400px;
       margin: 0 auto;
       padding: 20px;
@@ -121,6 +103,19 @@ const {categories} = Astro.props
     .container-anuncioform .form-group input[type="submit"]:hover {
       background-color: #696969;
     }
+    .container-anuncioform .form-group #descripcion{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    font-family: "inter";
+    }
+    
+    .form-group textarea {
+    resize: vertical;
+  }
+
   
     .container-anuncioform .form-group .error {
       color: red;
