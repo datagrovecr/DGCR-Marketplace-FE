@@ -260,8 +260,8 @@
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            const SearchBar = document.getElementsByClassName('container-Search-bar');
-            SearchBar[0].style.display = 'block'
+            let SearchBar = document.getElementsByClassName('container-Search-bar');
+            SearchBar[0].style.display = 'block';
         }
     };
 

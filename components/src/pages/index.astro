@@ -1,21 +1,19 @@
 ---
-import SearchBar from '../components/base/SearchBar.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Benefits from '../components/informacion/Benefits.astro';
-import Next from '../components/informacion/Next.astro';
-import Hero from '../components/informacion/Hero.astro';
-import FeaturedProducts from '../components/informacion/FeaturedProducts.astro';
+import SearchBar from "../components/base/SearchBar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Benefits from "../components/informacion/Benefits.astro";
+import Next from "../components/informacion/Next.astro";
+import Hero from "../components/informacion/Hero.astro";
+import FeaturedProducts from "../components/informacion/FeaturedProducts.astro";
 const pageTitle = "LABOROSO";
-//if id01 style is display: block;
-// the 
 ---
+
 <BaseLayout pageTitle={pageTitle}>
+    <Hero>
+        <SearchBar />
+    </Hero>
 
-<Hero>
-    <SearchBar />
-</Hero>
-
-<FeaturedProducts />
-<Next />
-<Benefits />
+    <FeaturedProducts />
+    <Next />
+    <Benefits />
 </BaseLayout>
