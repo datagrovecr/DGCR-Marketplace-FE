@@ -91,16 +91,22 @@
         box-sizing: border-box;
     }
 
-    /* Set a style for all buttons */
-    button {
+    /* Set a style for all buttons
+    using their respective id or class. */
+    #btn-icon, .cancelbtn  {
         background-color: #000000;
         color: white;
-        padding: 7px 10px;
-        margin: 8px 0;
+        padding: 7px 10px 6px 12px;
+        margin: 8px 0 6px 3px;
         border: none;
         cursor: pointer;
         width: 100%;
     }
+    #btn-icon{
+        font-weight: bolder;
+        font-size: large;
+    }
+
     /* Styles for the navigation inside the modal */
     .Navcontainer {
         text-align: center;
@@ -186,7 +192,7 @@
     .modal {
         /* Hidden by default */
         position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
+        z-index: 100; /* Sit on top */
         left: 0;
         top: 0;
         width: 100%; /* Full width */
