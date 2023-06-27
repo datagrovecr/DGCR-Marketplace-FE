@@ -6,10 +6,14 @@ import Next from '../components/informacion/Next.astro';
 import Hero from '../components/informacion/Hero.astro';
 import FeaturedProducts from '../components/informacion/FeaturedProducts.astro';
 const pageTitle = "LABOROSO";
+//if id01 style is display: block;
+// the 
 ---
 <BaseLayout pageTitle={pageTitle}>
 
-<Hero />
+<Hero>
+    <SearchBar />
+</Hero>
 
 <FeaturedProducts />
 <Next />

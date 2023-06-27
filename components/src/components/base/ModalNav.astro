@@ -4,7 +4,11 @@
 <div id="headerContainer">
     <div>
         <button
-            onclick="document.getElementById('id01').style.display = 'block'"
+            onclick="
+            document.getElementById('id01').style.display = 'block'; 
+            const SearchBar = document.getElementsByClassName('container-Search-bar');
+            SearchBar[0].style.display = 'none'
+            "
             id="btn-icon"
             >&#9776;
         </button>
@@ -51,7 +55,10 @@
                 <div class="container" id="closeContainer">
                     <button
                         type="button"
-                        onclick="document.getElementById('id01').style.display = 'none'"
+                        onclick="document.getElementById('id01').style.display = 'none'
+                        const SearchBar = document.getElementsByClassName('container-Search-bar');
+                        SearchBar[0].style.display = 'block'
+                        "
                         class="cancelbtn">Close</button
                     >
                     <span class="psw" id="pswForget"
@@ -247,11 +254,14 @@
     var modal = document.getElementById("id01");
     const btnLogin = document.getElementById("btn-login");
     const containerLogin = document.getElementsByClassName("containerLogin");
+   
 
     //User clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            const SearchBar = document.getElementsByClassName('container-Search-bar');
+            SearchBar[0].style.display = 'block'
         }
     };
 

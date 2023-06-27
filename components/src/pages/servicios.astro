@@ -1,9 +1,13 @@
 ---
 import BarraNavegacion from '../components/BarraNavegacion.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TodosLosServicios from '../components/Servicios/TodosLosServicios.astro';
 import Filtro from '../components/market/filtro.astro'
 import Carrusell from '../components/Servicios/Carrusell.astro';
+
+import LocationSmall from '../components/location/locationSmall.astro';
+
+import CuadroServicio from '../components/Servicios/CuadroServicio.astro'
+
 const pageTitle = "Trabajos Que Ayudan";
 ---
 <BaseLayout pageTitle={pageTitle}>
@@ -14,7 +18,18 @@ const pageTitle = "Trabajos Que Ayudan";
         <div class="servicios-filter">
             <Filtro />
         </div>
-        <TodosLosServicios />
+       
+
+        <div class="cuadro-servicio">
+
+          <h1>Nuestros servicios</h1>
+          
+          <p>En la zona de : </p><LocationSmall></LocationSmall>
+          
+          <div class="flex-container-servicio">
+              <CuadroServicio> 
+          </div>
+      </div>
     </div>
 </BaseLayout>
 <style>

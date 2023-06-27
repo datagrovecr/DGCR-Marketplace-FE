@@ -1,12 +1,62 @@
 ---
-import SearchBar from '../base/SearchBar.astro';
+
 ---
 <section class="hero">
     <div class="text"> 
       <h1>LABOROSO</h1>
       <p>Viva siempre el trabajo y la paz</p>
-      <SearchBar />
+      
+      <slot>
+
+      </slot>
     </div>
     
     <img src="https://res.cloudinary.com/sagacity/image/upload/c_crop,h_3333,w_5000,x_0,y_0/c_limit,dpr_2.625,f_auto,fl_lossy,q_80,w_412/SeptemberShop-courtesy_gb1yug.jpg" alt="Product 1">
   </section>
+
+
+<style>
+
+
+@media all and (max-width: 720px) {
+    .logo-image{
+      height: 3rem;
+    }
+
+    .hero  .text h1{
+  
+      font-family: "inter";
+      font-size: 3rem;
+      margin-top: 0;
+    }
+  }
+
+  .hero  .text{
+    background-size: cover;
+    text-align: center;
+    padding: 0 0;
+    color: #000000;
+    margin-bottom: 3rem;
+  }
+  .hero  .text h1{
+  
+    font-family: "inter";
+    font-size: 4.5rem;
+    margin-top: 0;
+  }
+  .hero  .text p{
+    font-family: 'inter';
+    margin-bottom: 3rem;
+  }
+  
+  .hero img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+  }
+</style>
