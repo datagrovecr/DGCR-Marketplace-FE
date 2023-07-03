@@ -2,6 +2,8 @@
 import EstrellasCalificacion from '../../components/Servicios/EstrellasCalificacion.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CalendarioAgenda from '../../components/Servicios/CalendarioAgenda.astro';
+import AnunciosPosted from '../../components/provider/AnunciosPosted.astro';
+
 const pageTitle = "Trabajos Que Ayudan";
 const calificacion = "4.7"
 const nameTitle = "Fernando Herrera"
@@ -10,17 +12,6 @@ const telefono = "8866-9283"
 const correo = "jardineria.fernando@gmail.com"
 const tiempoLaboroso = "5 meses"
 const porfileImage = "https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg"
-
-
-
-const anuncios = [
-    { name: 'Jardineria Fernando' , description:'Somos una empresa líder en el sector de jardinería, dedicada a crear espacios verdes excepcionales. Nuestro enfoque se centra en el diseño innovador, la calidad en la ejecución y el compromiso con la satisfacción del cliente. Con un equipo de profesionales apasionados y creativos, transformamos cualquier área exterior en un oasis de belleza natural y tranquilidad. Ya sea que necesites un jardín residencial, un paisaje corporativo o un proyecto público, estamos comprometidos en superar tus expectativas y hacer de tu visión una realidad impresionante.',src:"https://st4.depositphotos.com/1017986/39200/i/450/depositphotos_392006782-stock-photo-happy-man-in-apron-at.jpg"},
-    { name: 'Construccion' , description:'Repara y construlle lo que necesites',src:"https://cdn-icons-png.flaticon.com/512/4327/4327376.png", price:10, currency:"$", forward:"#" ,id:"2" },
-    { name: 'Product 3' , description:'Alistate para tu ocuacion especial.',src:"https://cdn-icons-png.flaticon.com/512/2707/2707142.png", price:10, currency:"$", forward:"#" ,id:"3" },
-    {name: 'Jardineria' , description:'Cuida tus espacios verdes.',src:"https://cdn-icons-png.flaticon.com/512/1518/1518863.png", price:10, currency:"$", forward:"#" ,id:"1" },
-    { name: 'Construccion' , description:'Repara y construlle lo que necesites',src:"https://cdn-icons-png.flaticon.com/512/4327/4327376.png", price:10, currency:"$", forward:"#" ,id:"2" },
-    // Add more products as needed
-  ];
 ---
 <BaseLayout pageTitle={pageTitle}>
     <body>
@@ -36,28 +27,10 @@ const anuncios = [
                     <p>Correo: {correo}</p>
                     <p>En la app desde: {tiempoLaboroso}</p>
                     <CalendarioAgenda />
-                    <button class="hire-button">Editar perfil</button>
-                    
+                    <button class="edit-button">Editar perfil</button>
                 </div>
             </div>
-            <div class="container-anuncios">
-                <div class="titulo-anuncios-crear-boton">
-                    <h2>Anuncios publicados:</h2>
-                    <button class="crear-anuncio-button">Crear anuncio</button>
-                </div>
-                {anuncios.map((item) =>
-                <div class="anuncio">
-                    <div class="img-btn-anuncio-indiv">
-                        <img src={item.src} class="imagen-cuadro-servicio">
-                    </div>  
-                    <div class="info-anuncios">
-                        <h2>{item.name}</h2>
-                        <p>{item.description}</p>
-                        <button class="desabilitar-button">Desabilitar anuncio</button> 
-                    </div>                            
-                </div> 
-                )}
-            </div>
+            <AnunciosPosted />
         </div>
     </body>
 </BaseLayout>
@@ -84,42 +57,6 @@ const anuncios = [
         width: 90%;
         margin-left: 2rem;
     }
-
-    .titulo-anuncios-crear-boton{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .anuncio{
-        margin-top: 1rem;
-        max-width: 100%;
-        padding: 1rem;
-        border-top: 1px solid #bbbbbb;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .info-anuncios{
-        margin-left: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .img-btn-anuncio-indiv{
-        display: flex;
-        flex-direction: column;
-    }
-    .calif-ubi{
-        display: flex;
-        align-items: center;
-    }
-
-    .ubi{
-        padding-left: 2rem;
-    }
-
     .profile {
         text-align: center;
         margin-bottom: 20px;
@@ -137,14 +74,6 @@ const anuncios = [
         object-position: center;
     }
 
-    .anuncio img {
-        width: 200px;
-        height: 180px;
-        border-radius: 15%;
-        object-fit: cover;
-        object-position: center;
-    }
-
     .profile h1 {
         font-size: 24px;
         margin-bottom: 15px;
@@ -158,15 +87,11 @@ const anuncios = [
         margin-top: 1rem;
     }
 
-    #descripcion{
-        margin-top: 2rem;
-    }
-
     strong {
         font-weight: bold;
     }
 
-    .hire-button {
+    .edit-button {
     margin-top: 1rem;
     background-color: black;
     color: #FFF;
@@ -178,42 +103,9 @@ const anuncios = [
     transition: background-color 0.3s ease;
     }
 
-    .hire-button:hover {
+    .edit-button:hover {
     background-color: #5B5B5B;
     }
-
-    .crear-anuncio-button{
-    background-color: rgb(11, 124, 11);
-    color: #FFF;
-    border: none;
-    padding: 12px 22px;
-    font-size: 25px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    }
-
-    .crear-anuncio-button:hover {
-    background-color: #23c02d;
-    }
-
-    .desabilitar-button {
-    margin-top: 1rem;
-    background-color: rgb(131, 131, 131);
-    color: #FFF;
-    border: none;
-    padding: 12px 22px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    }
-
-    .desabilitar-button:hover {
-    background-color: #bababa;
-    color: rgb(255, 255, 255);
-    }
-
 
     @media all and (max-width: 720px) {
         .container{
@@ -242,30 +134,5 @@ const anuncios = [
             display: flex;
             align-items: center;
         }
-
-        .anuncio img{
-            width: 100%;
-        }
-
-        .anuncio{
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .titulo-anuncios-crear-boton{
-            margin-top: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            flex-direction: column-reverse;
-        }
-
-        .crear-anuncio-button{
-            margin-bottom: 2rem;
-            width: 100%;
-        }
-
-
     }
 </style>
