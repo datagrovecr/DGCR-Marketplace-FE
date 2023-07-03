@@ -1,0 +1,28 @@
+<a id="circleBtn-next-link" href="../pages/provider/createProfile.astro">
+    <button class="circle-button-next"></button>
+</a>
+
+<style>
+    .circle-button-next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #39b571;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      border: 0;
+    }
+    
+    /* Estilos para la flecha */
+    .circle-button-next::after {
+      content: "\2192"; /* Código Unicode para la flecha hacia la derecha */
+    }
+
+    .circleBtn-next-link{
+        text-decoration: none;
+    }
+  </style>
