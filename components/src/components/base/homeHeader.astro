@@ -1,6 +1,6 @@
 ---
 const pageTitle:string = "LABOROSO"
-import NavLines from "./MenuHorizontal.astro";
+import Navigation from "./Navigation.astro";
 import ModalNav from "./ModalNav.astro";
 ---
 <header id="container">
@@ -13,13 +13,26 @@ import ModalNav from "./ModalNav.astro";
                 <a id="logo" href="/"><img class="logo-image" src="../blackLogo.png"></img></a>
             </div>
             <div class="nav-icon menu-icon" id="menu-toggle">
-                <!-- <a href="#" id="navIcon" class="nav-icon-000">&#9776;</a>
-                <a href="#" id="navIcon" class="nav-icon-000 hidden">&#9932;</a> -->
             </div>
-            
-            <ModalNav />
+            <div id="ModalNalComponent">
+                <ModalNav />
+            </div>
+            <div id="NavigationComponent">
+                <Navigation />
+            </div>
         </div>
     </div>
-    
-    
 </header>
+
+<style>
+    @media screen and (max-width: 980px) {
+        #NavigationComponent{
+            display: none;
+        }
+
+        #ModalNalComponent{
+            
+        }
+        
+    }
+</style>
