@@ -14,9 +14,9 @@ const pageTitle: string = "LABOROSO";
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
-  display: none;
-  margin: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-links a {
@@ -27,20 +27,21 @@ const pageTitle: string = "LABOROSO";
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 .nav-links a:hover, a:focus {
-  background-color: #ff9776;
-}
-
+    border-bottom: 3px solid #3eac5b;
+  }
 .expanded {
   display: unset;
 }
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 980px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
+    margin-left: 3em;
+    display: flex;
+    flex-direction: row;
     position: static;
     width: auto;
     background: none;
@@ -49,6 +50,10 @@ const pageTitle: string = "LABOROSO";
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+
+  .nav-links a:hover, a:focus {
+    border-bottom: 3px solid #3eac5b;
   }
 
 }

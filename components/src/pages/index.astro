@@ -5,10 +5,11 @@ import Benefits from "../components/informacion/Benefits.astro";
 import Next from "../components/informacion/Next.astro";
 import Hero from "../components/informacion/Hero.astro";
 import FeaturedProducts from "../components/informacion/FeaturedProducts.astro";
+import HomeBaseLayout from "../layouts/HomeBaseLayout.astro";
 const pageTitle = "LABOROSO";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<HomeBaseLayout pageTitle={pageTitle}>
     <Hero>
         <SearchBar />
     </Hero>
@@ -16,4 +17,4 @@ const pageTitle = "LABOROSO";
     <FeaturedProducts />
     <Next />
     <Benefits />
-</BaseLayout>
+</HomeBaseLayout>

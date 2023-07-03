@@ -1,5 +1,5 @@
 ---
-import MenuOptions from "./MenuOptions.astro";
+import Navigation from "./Navigation.astro";
 ---
 
 <div id="headerContainer">
@@ -16,8 +16,10 @@ import MenuOptions from "./MenuOptions.astro";
 
         <div id="id01" style="display: none;" class="modal">
             <form class="modal-content animate" method="post">
-                <MenuOptions />
-
+                <div class="MenuOptionsLinks">
+                    <Navigation />
+                </div>
+                
                 <a id="btn-login" > <p>Sign In</p></a>
                 <div class="containerLogin">
                     <label for="uname"><b>Username</b></label>
@@ -236,7 +238,7 @@ import MenuOptions from "./MenuOptions.astro";
     }
 
     /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
+    @media screen and (max-width: 980px) {
         span.psw {
             display: block;
             float: none;
@@ -244,11 +246,16 @@ import MenuOptions from "./MenuOptions.astro";
         .cancelbtn {
             width: 100%;
         }
+
+        #btn-icon{
+            display: block !important;
+        }
     }
 
     @media screen and (min-width: 300px) {
-
-
+        #btn-icon{
+            display: none;
+        }
     }
 </style>
 

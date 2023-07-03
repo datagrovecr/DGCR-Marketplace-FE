@@ -14,8 +14,12 @@ import Navigation from "./Navigation.astro";
                 <a id="logo" href="/"><img class="logo-image" src="../blackLogo.png"></img></a>
                 <h1 class="logo">LABOROSO</h1>
             </div>
-            <Navigation />
-            <ModalNav />
+            <div id="ModalNalComponent">
+                <ModalNav />
+            </div>
+            <div id="NavigationComponent">
+                <Navigation />
+            </div>
         </div>
     </div>
     
@@ -23,6 +27,18 @@ import Navigation from "./Navigation.astro";
 </header>
 
 <style>
+
+    @media screen and (max-width: 980px) {
+        #NavigationComponent{
+            display: none;
+        }
+
+        #ModalNalComponent{
+            
+        }
+        
+    }
+    
 
 .benefit {
     display: inline-block;
