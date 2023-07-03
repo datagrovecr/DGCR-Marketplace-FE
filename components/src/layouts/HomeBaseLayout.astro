@@ -1,8 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from "../components/base/footer.astro";
-import Header from "../components/base/header.astro";
-import BarraNavegacion from '../components/BarraNavegacion.astro';
+import HomeHeader from '../components/base/homeHeader.astro';
 const {pageTitle} = Astro.props
 ---
 <html lang="en">
@@ -13,13 +12,12 @@ const {pageTitle} = Astro.props
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'></link>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content = {Astro.generator} >      
+    <meta name="generator" content = {Astro.generator} >
     <title>{pageTitle}</title>
     <link rel="shortcut icon" href="whiteLogo.png">
   </head>
   <body>
-    <Header />
-    <BarraNavegacion />
+    <HomeHeader />
 	<slot />
 	<Footer />
   </body>

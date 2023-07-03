@@ -3,6 +3,15 @@ header{
   
 }
 
+.all-logo{
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  font-family: inter;
+}
+
 .logo-image{
   height: 5rem;
 }

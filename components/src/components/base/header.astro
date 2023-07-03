@@ -1,7 +1,8 @@
 ---
 const pageTitle:string = "LABOROSO"
-
+import MenuOptions from "./MenuOptions.astro";
 import ModalNav from "./ModalNav.astro";
+import Navigation from "./Navigation.astro";
 ---
 <header id="container">
     <!-- <a id="logo">{pageTitle}</a>               -->
@@ -9,14 +10,11 @@ import ModalNav from "./ModalNav.astro";
 
     <div id="container">
         <div class="navLines" id="navLines">
-            <div>
+            <div class="all-logo">
                 <a id="logo" href="/"><img class="logo-image" src="../blackLogo.png"></img></a>
+                <h1 class="logo">LABOROSO</h1>
             </div>
-            <div class="nav-icon menu-icon" id="menu-toggle">
-                <!-- <a href="#" id="navIcon" class="nav-icon-000">&#9776;</a>
-                <a href="#" id="navIcon" class="nav-icon-000 hidden">&#9932;</a> -->
-            </div>
-            
+            <Navigation />
             <ModalNav />
         </div>
     </div>
