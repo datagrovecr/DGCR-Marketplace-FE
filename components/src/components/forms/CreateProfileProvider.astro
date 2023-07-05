@@ -1,11 +1,11 @@
 ---
-
+import CirculBtnNext from "../base/CirculBtnNext.astro";
+const srcNext = "../pages/provider/perfil.astro";
 
 ---
 
-
 <div class="container-loginform">
-  <h2>Registrate!</h2>
+  <h2>Es hora de crear tu perfil</h2>
   <form  method="POST" id="user-form">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
@@ -18,24 +18,12 @@
     <div class="form-group">
       <label for="apellido">Cédula: (física o jurídica)</label>
       <input type="text" id="apellido" name="apellido" required />
+      <small>*Esta informacion no se mostrara en tu perfil</small>
     </div>
     <div class="form-group">
       <label for="telefono">Teléfono:</label>
       <input type="tel" id="telefono" name="telefono" pattern="[0-9]{8}" required />
       <small>Formato: 12345678</small>
-    </div>
-    <div class="form-group">
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" id="correo" name="correo" required />
-    </div>
-
-    <div class="form-group">
-      <label for="contrasena">Contraseña:</label>
-      <input type="password" id="contrasena" name="contrasena" required />
-    </div>
-    <div class="form-group">
-      <label for="confirmar-contrasena">Confirmar contraseña:</label>
-      <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" />
     </div>
     
     <div class="form-group">
@@ -59,9 +47,16 @@
       <label for="canton">Cantón:</label>
       <input type="text" id="canton" name="canton" required />
     </div>
-
     <div class="form-group">
-      <input type="submit" value="Enviar" />
+      <label for="canton">Que servicio ofreces?</label>
+      <input type="text" id="canton" name="canton" required />
+    </div>
+    <div class="form-group">
+      <label for="canton">Cuentanos sobre el:</label>
+      <input type="text" id="canton" name="canton" required />
+    </div>
+    <div id="nextBtnCreateProfile">
+      <CirculBtnNext {srcNext}/>
     </div>
   </form>
  
@@ -120,5 +115,9 @@
     color: red;
     font-size: 12px;
     margin-top: 5px;
+  }
+
+  #nextBtnCreateProfile{
+    align-items: center;
   }
 </style>

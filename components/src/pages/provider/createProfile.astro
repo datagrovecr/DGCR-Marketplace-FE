@@ -1,8 +1,9 @@
 ---
-import RegisterProvider from "../../components/forms/registerProvider.astro";
+import CreateProfileProvider from "../../components/forms/CreateProfileProvider.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const pageTitle="LABOROSO"
 
 ---
-<BaseLayout>
-    <RegisterProvider />
+<BaseLayout pageTitle={pageTitle}>
+    <CreateProfileProvider />
 </BaseLayout>

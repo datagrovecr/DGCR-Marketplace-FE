@@ -1,4 +1,8 @@
-<a id="circleBtn-next-link" href="../pages/provider/createProfile.astro">
+---
+const srcNext = Astro.props
+---
+
+<a id="circleBtn-next-link" href?={srcNext}>
     <button class="circle-button-next"></button>
 </a>
 
@@ -22,7 +26,7 @@
       content: "\2192"; /* Código Unicode para la flecha hacia la derecha */
     }
 
-    .circleBtn-next-link{
+    a{
         text-decoration: none;
     }
   </style>
