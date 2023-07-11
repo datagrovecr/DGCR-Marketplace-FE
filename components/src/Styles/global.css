@@ -1,3 +1,13 @@
+:root {
+  --color-text-cta: black;
+  --color-bg-cta: #FDE68A;
+}
+​
+.dark {
+  --color-text-cta: white;
+  --color-bg-cta: #16A34A;
+}
+
 header{
   color: #000000;
 }
