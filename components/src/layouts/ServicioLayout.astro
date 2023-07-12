@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Footer from "../components/base/footer.astro";
 import Header from "../components/base/header.astro";
-import BarraNavegacion from '../components/BarraNavegacion.astro';
+import NavBar from '../components/NavBar.astro';
 const {pageTitle} = Astro.props
 ---
 <html lang="en">
@@ -19,7 +19,7 @@ const {pageTitle} = Astro.props
   </head>
   <body>
     <Header />
-    <BarraNavegacion />
+    <NavBar />
 	<slot />
 	<Footer />
   </body>

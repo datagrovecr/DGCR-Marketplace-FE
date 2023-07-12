@@ -1,6 +1,6 @@
 ---
 import CirculBtnNext from "../base/CirculBtnNext.astro";
-const srcNext = "../"
+const srcNext = "../provider/createProfile.astro"
 ---
 
 
@@ -21,7 +21,7 @@ const srcNext = "../"
       <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" />
     </div>
     <div class="nextBtn-register">
-      <CirculBtnNext />
+      <CirculBtnNext srcNext={srcNext}/>
     </div>
   </form>
 </div>

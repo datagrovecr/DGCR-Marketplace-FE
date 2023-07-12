@@ -1,8 +1,8 @@
 ---
 import ServicioLayout from '../layouts/ServicioLayout.astro';
-import EstrellasCalificacion from '../components/Servicios/EstrellasCalificacion.astro';
-import CalendarioAgenda from '../components/Servicios/CalendarioAgenda.astro';
-import Comentarios from '../components/Servicios/Comentarios.astro';
+import CalificationStars from '../components/Services/CalificationStars.astro';
+import Calendar from '../components/Services/Calendar.astro';
+import Coments from '../components/Services/Coments.astro';
 const pageTitle = "LABOROSO";
 const calificacion = "4.7"
 ---
@@ -12,14 +12,14 @@ const calificacion = "4.7"
         <div class="info">
             <h1>Jardineria Fernando</h1>
             <div class="calif-ubi">
-                <EstrellasCalificacion calificacion={calificacion} />
+                <CalificationStars calificacion={calificacion} />
                 <p class="ubi">Moravia</p>
             </div>
             <p id="descripcion">Somos una empresa líder en el sector de jardinería, dedicada a crear espacios verdes excepcionales. Nuestro enfoque se centra en el diseño innovador, la calidad en la ejecución y el compromiso con la satisfacción del cliente. Con un equipo de profesionales apasionados y creativos, transformamos cualquier área exterior en un oasis de belleza natural y tranquilidad. Ya sea que necesites un jardín residencial, un paisaje corporativo o un proyecto público, estamos comprometidos en superar tus expectativas y hacer de tu visión una realidad impresionante.</p>
             <!-- <button class="hire-button">Ver disponibilidad</button> -->
             <hr>
             <div>
-                <CalendarioAgenda />
+                <Calendar />
             </div>
         </div>
         <div class="profile">
@@ -27,7 +27,7 @@ const calificacion = "4.7"
             <button class="hire-button">Contactar</button>
         </div>
     </div>
-    <Comentarios />
+    <Coments />
 </body>
 
 <style>

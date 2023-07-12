@@ -1,8 +1,8 @@
 ---
-import EstrellasCalificacion from '../../components/Servicios/EstrellasCalificacion.astro';
+import CalificationStars from '../../components/Services/CalificationStars.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CalendarioAgenda from '../../components/Servicios/CalendarioAgenda.astro';
-import AnunciosPosted from '../../components/provider/AnunciosPosted.astro';
+import Calendar from '../../components/Services/Calendar.astro';
+import PromotedPost from '../../components/provider/PromotedPost.astro';
 
 const pageTitle = "Trabajos Que Ayudan";
 const calificacion = "4.7"
@@ -20,17 +20,17 @@ const porfileImage = "https://st4.depositphotos.com/1017986/39200/i/450/depositp
                 <div class="profile">
                     <h2>Bienvenido!</h2>
                     <h1>{nameTitle}</h1>
-                    <img src={porfileImage}>
-                    <EstrellasCalificacion {calificacion}/>
+                    <img src={porfileImage} class="rounded-full object-cover object-center">
+                    <CalificationStars {calificacion}/>
                     <p>Ubicacion: {ubicacion}</p>
                     <p>Numero de telefono: {telefono}</p>
                     <p>Correo: {correo}</p>
                     <p>En la app desde: {tiempoLaboroso}</p>
-                    <CalendarioAgenda />
+                    <Calendar />
                     <button class="edit-button">Editar perfil</button>
                 </div>
             </div>
-            <AnunciosPosted />
+            <PromotedPost />
         </div>
     </body>
 </BaseLayout>
@@ -66,13 +66,13 @@ const porfileImage = "https://st4.depositphotos.com/1017986/39200/i/450/depositp
         color: black;
     }
 
-    .profile img {
+    /* .profile img {
         width: 300px;
         height: 300px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center;
-    }
+    } */
 
     .profile h1 {
         font-size: 24px;

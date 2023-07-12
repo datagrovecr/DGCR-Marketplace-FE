@@ -1,22 +1,22 @@
 ---
-import BarraNavegacion from '../components/BarraNavegacion.astro';
+import NavBar from '../components/NavBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Filtro from '../components/market/filtro.astro'
-import Carrusell from '../components/Servicios/Carrusell.astro';
+import Filter from '../components/market/Filter.astro'
+import Carousel from '../components/Services/Carousel.astro';
 
 import LocationSmall from '../components/location/locationSmall.astro';
 
-import CuadroServicio from '../components/Servicios/CuadroServicio.astro'
+import ServiceChart from '../components/Services/ServiceChart.astro'
 
 const pageTitle = "Trabajos Que Ayudan";
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <BarraNavegacion />
-    <Carrusell />
+    <NavBar />
+    <Carousel />
     
     <div class="pgServicios">
         <div class="servicios-filter">
-            <Filtro />
+            <Filter />
         </div>
        
 
@@ -27,7 +27,7 @@ const pageTitle = "Trabajos Que Ayudan";
           <p>En la zona de : </p><LocationSmall></LocationSmall>
           
           <div class="flex-container-servicio">
-              <CuadroServicio> 
+              <ServiceChart> 
           </div>
       </div>
     </div>
